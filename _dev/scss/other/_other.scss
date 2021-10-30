@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+// -------------------------------------------------------------------
+// 1.整列
+// -------------------------------------------------------------------
+.alc{text-align: center !important;}
+.all{text-align: left !important;}
+.alr{text-align: right !important;}
+.middle{vertical-align:middle !important;}
+
+// -------------------------------------------------------------------
+// 2.余白調整（margin）
+// -------------------------------------------------------------------
+@for $i from 0 through 10 {
+	.mt#{5*$i} { margin-top:#{5*$i}px !important;}
+	.mr#{5*$i} { margin-right:#{5*$i}px !important;}
+	.mb#{5*$i} { margin-bottom:#{5*$i}px !important;}
+	.ml#{5*$i} { margin-left:#{5*$i}px !important;}
+}
+
+// -------------------------------------------------------------------
+// 3.幅調整（width）
+// -------------------------------------------------------------------
+@for $i from 1 through 100 {
+	.w#{$i} {width:1% * $i !important;}
+}

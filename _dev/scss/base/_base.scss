@@ -1,0 +1,88 @@
+// --------------------------------------
+// base
+// --------------------------------------
+
+body {
+    color: $colorMain;
+    font-family: $fontFamily;
+    font-size: 16px;
+    line-height: 1.6;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+img {
+    border: none;
+    height: auto;
+    vertical-align: bottom;
+    max-width: 100%;
+}
+
+a {
+    color: $colorLink;
+    text-decoration: none;
+    transition: opacity .3s;
+    @include hover {
+        opacity: .5;
+        @include mq(sp) {
+            opacity: 1;
+        }
+    }
+}
+a[href^="tel"] {
+    color: $colorMain;
+    text-decoration: none;
+    cursor: default;
+    @include hover {
+        opacity: 1;
+    }
+    @include mq(sp) {
+        color: $colorLink;
+        text-decoration: underline;
+    }
+}
+
+em {
+    font-style: normal;
+    font-weight: bold;
+}
+
+h1, h2, h3, h4, h5, h6, p, dl, dt, dd {
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+    font-family: $fontFamily;
+    color: $colorMain;
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+}
+
+ul, ol {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+small {
+    font-size: 100%;
+}
+
+figure {
+    margin: 0;
+}

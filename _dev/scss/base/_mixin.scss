@@ -1,0 +1,73 @@
+// --------------------------------------
+// mixin
+// --------------------------------------
+
+// clear
+// ---------------------------
+@mixin cf {
+    &::after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+}
+
+
+// mediaQuery
+// ---------------------------
+@mixin mq($device) {
+    @if $device == sp {
+        @media only screen and (max-width: $mqSp) {
+            @content;
+        }
+    } @else if $device == tab {
+        @media only screen and (max-width: $mqTab) {
+            @content;
+        }
+    } @else if $device == pc {
+        @media only screen and (max-width: $mqPc) {
+            @content;
+        }
+    } @else {
+        @media screen and (max-width: $device){
+            @content;
+      }
+  }
+}
+
+
+// hover
+// ---------------------------
+@mixin hover {
+    &:hover, &:focus {
+        @content;
+    }
+}
+
+// pseudo
+// ---------------------------
+@mixin pseudo{
+    content: "";
+    display:block;
+    position:absolute;
+}
+
+// arrow
+// ---------------------------
+@mixin arrow($color, $length:8px, $rotate:45deg, $left:auto, $right:8px, $top: 0, $bottom: 0, $weight: 2px, $margin: auto) {
+    color: $color;
+    position: absolute;
+    top: $top;
+    bottom: $bottom;
+    left: $left;
+    right: $right;
+    display: block;
+    content: '';
+    width: $length;
+    height: $length;
+    margin: auto;
+    border-top: $weight solid $color;
+    border-right: $weight solid $color;
+    -webkit-transform: rotate($rotate);
+    transform: rotate($rotate);
+}
